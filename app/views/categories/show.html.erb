@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @category.name %></h1>
+</p>
+
+<h2>Products</h2>
+<% @category.products.each do |product| %>
+  <h3><%= link_to product.title, product %></h3>
+    <div>
+        <%= product.body %> -   
+<%end%>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

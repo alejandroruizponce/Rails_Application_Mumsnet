@@ -1,0 +1,27 @@
+<%= form_for(@product) do |f| %>
+    <% @product.errors.full_messages.each do |message| %>
+        <div class="be-red white top-space">
+            * <%= message %>
+        </div>
+    <%end%>
+    <div class="field">
+        <%= f.text_field :title, placeholder: "Title", class:"form-control" %>
+    </div>
+    <div class="field">
+        <%= f.text_area :body, placeholder: "Description", style:"height:250px;", class:"form-control" %>
+    </div>
+    <div class="field">
+        <label> Category</label>
+        <% @categories.each do |category| %>
+            <div class="field">
+                <%= check_box_tag "categories[]", category.id %> <%= category.name %>
+            </div>
+            
+        <%end%>
+    </div>
+    
+    
+    <div class= "field">
+        <%= f.submit "Add product", class:"btn be-red white top-space" %>
+    </div>
+<%end%>

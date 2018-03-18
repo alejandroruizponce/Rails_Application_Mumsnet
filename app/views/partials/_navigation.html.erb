@@ -1,0 +1,17 @@
+   <header>
+      <nav class="be-red white large-padding">
+        <ul class="no-list row center-xs around-xs middle-xs">
+          <li class ="col-md">
+           <h1 class="no-margin" id="logo"> Memsnet </h1>
+          </li>
+          <li class ="col-md">
+            <%= link_to "Home", root_path %>
+          </li>
+          <% @categories.each do |category| %>
+              <li class ="col-md">
+                <%= link_to category.name, category %>
+              </li>
+          <%end%>
+        </ul>
+      </nav>
+    </header>

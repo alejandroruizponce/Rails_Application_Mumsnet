@@ -1,0 +1,14 @@
+<div style="width:80%; margin:0 auto;">
+<% @products.each do |product| %>
+    <h1><%= link_to product.title, product %></h1>
+    <div>
+        <%= product.body %> -   
+        <div class="btn-danger">
+        <%= link_to "Delete", product,method: :delete %>
+        </div>
+    </div>
+    <div>
+        <%= product.creation_date %>
+    </div>
+<%end%>
+</div>
